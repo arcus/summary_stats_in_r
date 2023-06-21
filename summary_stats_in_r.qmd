@@ -944,6 +944,23 @@ Don't struggle in silence!
 - There's a solution available in `summary_stats_solutions.Rmd`, but you'll learn a lot more if you try it yourself first
 :::
 
+## What we covered
+
+::: {.incremental}
+- getting example data from the `medicaldata` package
+- `summary()`
+- `min()`, `max()`, `mean()`, `median()`, `var()`, `sd()`, `quantile()`
+- `table()`
+- `xtabs()`
+- building tables with `gtsummary` package, specifically using `tbl_summary()`
+- a bunch of extras throughout on data transformations and data cleaning
+:::
+
+::: notes
+That's a lot! 
+So don't expect to remember everything --- you have the slides and all the example code to go back to. My goal for you all is for you to come away with a general impression of how to go about getting summary stats in R, and to know where there's some code for you to copy if you want to make a Table 1. 
+:::
+
 # Additional resources
 
 For general background on statistics: 
