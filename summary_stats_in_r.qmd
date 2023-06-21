@@ -51,7 +51,9 @@ Link to calendar: [https://bit.ly/chopROfficeHours](https://bit.ly/chopROfficeHo
 
 . . .
 
+::: aside
 We're looking for more volunteers to lead appointments! Get in touch: hartmanr1@chop.edu
+:::
 
 ::: notes
 We have regular office hours appointments available to get R help. 
@@ -64,7 +66,7 @@ We set up a calendar online where you can book an appointment.
 
 We are offering the popular R 101 workshop again this August!
 
-Link to sign up: []()
+Link to sign up: [https://redcap.link/august_2023_r_workshop](https://redcap.link/august_2023_r_workshop)
 
 . . . 
 
@@ -979,61 +981,3 @@ Want to go through this material again? It's posted as [an interactive tutorial 
 If you like it you may want to sign up for the DART research program (eligibility criteria apply)! Our next wave begins Aug 7.
 
 [Fill out our interest form to learn more!](https://redcap.chop.edu/surveys/?s=FPHWFNEA9KN3HERF)
-
-
-# examples
-
-# big text
-
-::: {.r-fit-text}
-text size fills the screen
-:::
-
-# highlighting code
-
-```{r}
-#| echo: true
-#| output-location: slide
-#| code-line-numbers: "|6|9"
-
-```
-
-## {auto-animate="true"}
-
-```{r eval=FALSE}
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-  # Render a barplot
-})
-```
-
-## {auto-animate=true}
-
-```{r eval=FALSE}
-# Fill in the spot we created for a plot
-output$phonePlot <- renderPlot({
-  # Render a barplot
-  barplot(WorldPhones[,input$region]*1000, 
-          main=input$region,
-          ylab="Number of Telephones",
-          xlab="Year")
-})
-```
-
-## {auto-animate=true}
-
-Animation
-
-## {auto-animate=true}
-
-Implicit
-
-Animation
-
-## Slide Title
-
-Here is an image:
-
-![](image.png){.r-stretch}
-
-Some text after the image.
