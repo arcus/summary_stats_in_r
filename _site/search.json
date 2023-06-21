@@ -1,0 +1,576 @@
+[
+  {
+    "objectID": "index.html#r-101-introduction-to-r-for-clinical-data",
+    "href": "index.html#r-101-introduction-to-r-for-clinical-data",
+    "title": "",
+    "section": "R 101: Introduction to R for Clinical Data",
+    "text": "R 101: Introduction to R for Clinical Data\nPresented by R/Medicine 2023\nSlide decks (click on any title):\n\nWelcome\nPart 1: Introduction\nPart 2: Visualize\nPart 3: Transform\nPart 4: Dashboards\n\n\n\n\nR/Medicine 2023"
+  },
+  {
+    "objectID": "welcome.html#tech-check",
+    "href": "welcome.html#tech-check",
+    "title": "",
+    "section": "Tech Check",
+    "text": "Tech Check\n\nWe suggest using the Chrome web browser.\nImportant!! If you haven’t already, please sign up for a free account at https://posit.cloud. We will use this as our platform today.\n(optional) These slides are at https://joy-payton-chop.quarto.pub/r-101-rmed-2023\n(optional) The GitHub repo with exercises and solutions for this course is at https://github.com/pm0kjp/intro-to-r-for-clinical-data-rmed2023"
+  },
+  {
+    "objectID": "welcome.html#r-101-intro-to-r-for-clinical-data",
+    "href": "welcome.html#r-101-intro-to-r-for-clinical-data",
+    "title": "",
+    "section": "R 101: Intro to R for Clinical Data",
+    "text": "R 101: Intro to R for Clinical Data\n\n[Start at 0:02 past starting time.]\nHello and welcome to R 101. We’re glad you’re here!"
+  },
+  {
+    "objectID": "welcome.html#introducing-your-presenters-and-tas",
+    "href": "welcome.html#introducing-your-presenters-and-tas",
+    "title": "",
+    "section": "Introducing your Presenters and TAs!",
+    "text": "Introducing your Presenters and TAs!\nPresenters and TAs:\n\nJoy Payton\nStephan Kadauke, MD, PhD\nCatalina Canizares\nFrancisco Cardozo\nRose Hartman, PhD\n\n\nWe have several great Presenters and Teaching Assistants, including the folks whose names you see here. Our TA’s will be helping learners out one on one, so if you’re struggling, please reach out in chat and one of the TAs will help!\nThe main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.\nWe will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that’s completely up to you. We won’t record breakout sessions."
+  },
+  {
+    "objectID": "welcome.html#non-verbal-feedback",
+    "href": "welcome.html#non-verbal-feedback",
+    "title": "",
+    "section": "Non-Verbal Feedback",
+    "text": "Non-Verbal Feedback\nThe “Yes, go ahead” feedback with the check mark is important today!\n\n\nWe will make heavy use of the Non-verbal Feedback functionality of Zoom. At various points, we presenters will ask you to click “Yes” to let us know we can keep going. What I mean by that is to click the green circle with the check mark in the Participants window. Go ahead and find that “Reactions” section of your Zoom screen now. We’ll ask you to use it in just a few moments."
+  },
+  {
+    "objectID": "welcome.html#chat-window",
+    "href": "welcome.html#chat-window",
+    "title": "",
+    "section": "Chat Window",
+    "text": "Chat Window\n\n\n\n\nChat is the way we ask for help here.\n\n\n\nThe primary purpose of the Chat window, for this course, is to ask for help if you get stuck with a technical issue. If you don’t have a problem that someone is helping you with, you do not need to monitor the chat window to follow the course. I will also occasionally ask you to write the answer to a question in the chat.\nPlease note that when I’m presenting, I can’t also monitor the chat at the same time, so please don’t send me private messages. Instead, post to Everyone, briefly describing the problem you have, and you will get help by one of our TAs."
+  },
+  {
+    "objectID": "welcome.html#your-turn-1",
+    "href": "welcome.html#your-turn-1",
+    "title": "",
+    "section": "Your Turn #1",
+    "text": "Your Turn #1\nClick the “yes” button () in the Participants window. Then tell us your location (city, country) in the Chat window. If you haven’t already, also please create an account at https://posit.cloud, or be ready to create a project in your own RStudio from our GitHub repo\n\n\n\n−+\n01:00\n\n\n\n\nThis brings us to the first interactive exercise! In the “Reactions” section of Zoom, please click on the “yes” button (). When you do this, it tells us as presenters that you’re there, you’re listening, and you’re ready to continue.\nAlso, please tell us who you are! In the chat window, please tell us where you’re joining us from. And if you haven’t already, please take this moment to sign up for a free account at https://posit.cloud.\nWe’ll give you about one minute to do this exercise."
+  },
+  {
+    "objectID": "welcome.html#orientation-to-the-course",
+    "href": "welcome.html#orientation-to-the-course",
+    "title": "",
+    "section": "Orientation to the Course",
+    "text": "Orientation to the Course\n\nGreat, now that we have technology squared away, let’s move ahead and learn about the scope of today’s learning."
+  },
+  {
+    "objectID": "welcome.html#the-data-analysis-pipeline",
+    "href": "welcome.html#the-data-analysis-pipeline",
+    "title": "",
+    "section": "The Data Analysis Pipeline",
+    "text": "The Data Analysis Pipeline\n\n\nThis workshop is a gentle introduction to data science designed for healthcare professionals and researchers who don’t have a background in programming. This slide shows a high-level conceptual framework of the most important steps of the data analysis process.\nYou always start by importing data and cleaning or “tidying” it up.\nThen you start an iterative process of exploratory data analysis, which usually requires some data transformation.\nThe main engines of knowledge generation are visualization and modeling.\nFinally, you need to communicate your results.\nWe will introduce the basics of all of these steps today, with the exception of modeling. Please note: there is more material in these slides than we have time in this workshop, but I wanted to leave all of this here for you to peruse on your own time. We will definitely be skipping some of the optional slides today."
+  },
+  {
+    "objectID": "welcome.html#lecture-slides",
+    "href": "welcome.html#lecture-slides",
+    "title": "",
+    "section": "Lecture Slides",
+    "text": "Lecture Slides\n\n\nIn general, we will introduce new concepts with lecture slides like this one. We try to illustrate the concepts in a way that makes it easier to learn how to write code. Importantly, you will have access to the slides and be able to look at them again after you leave this course."
+  },
+  {
+    "objectID": "welcome.html#timed-interactive-coding-exercises",
+    "href": "welcome.html#timed-interactive-coding-exercises",
+    "title": "",
+    "section": "Timed Interactive Coding Exercises",
+    "text": "Timed Interactive Coding Exercises\n\n\n\n\n\n\n\n\nAfter we present you with explanations, we’ll then practice these new skills with timed interactive coding exercises. For the coding exercises, we set up a training environment on the web specifically for this course.\nPlease note that these exercises are timed. It’s not essential that you finish each exercise, but it’s essential that you try. When the time is up, I ask that everyone stop working. After each coding exercise, we will come back together, and I will live code the exercise to catch everyone up."
+  },
+  {
+    "objectID": "welcome.html#code-of-conduct",
+    "href": "welcome.html#code-of-conduct",
+    "title": "",
+    "section": "Code of Conduct",
+    "text": "Code of Conduct\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://events.linuxfoundation.org/r-medicine/attend/code-of-conduct/\n\nOne more serious thing I need to point out, since this is an interactive course - we want to provide a welcoming and supportive environment for all people, regardless of background or identity.\nSo we have a strict no-harassment policy: this includes abusive, offensive, or degrading language, in writing or in voice.\nWe also want people to feel that they can be themselves, especially in breakout rooms. While we will be recording this main session, we ask that participants refrain from taking screenshots or recording their fellow learners."
+  },
+  {
+    "objectID": "welcome.html#your-turn-2",
+    "href": "welcome.html#your-turn-2",
+    "title": "",
+    "section": "Your Turn #2",
+    "text": "Your Turn #2\nMeet and greet! We will send you into breakout rooms, where you will have a few minutes to meet one of our TAs and some of your fellow participants.\n\nThis brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.\nFor this exercise, we encourage you to turn on your microphone and camera, if you’re comfortable.\nAt the 10 [or less, make a judgment call] min mark, we’ll bring everyone back into the main session. Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you’re in this session."
+  },
+  {
+    "objectID": "welcome.html#next-up-introduction",
+    "href": "welcome.html#next-up-introduction",
+    "title": "",
+    "section": "Next Up: Introduction",
+    "text": "Next Up: Introduction\nOur next topic is:\nPart 1: Introduction\n\n\n\nCHOPR"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#thinking-about-summary-statistics",
+    "href": "summary_stats_in_r.html#thinking-about-summary-statistics",
+    "title": "Summary Statistics  in R",
+    "section": "Thinking About Summary Statistics",
+    "text": "Thinking About Summary Statistics\nSummary statistics, also called descriptive statistics, serve a few important functions:\n\nunderstand your data better during exploratory data analysis\ngive you an idea of what your study population was like at baseline\nshow preexisting differences between groups\n\n\n\nthey help you understand your data better during exploratory data analysis (including things like catching errors or outliers!)\nthey give you (and your readers) a better idea of what your study population was like at baseline, which has implications for how generalizable your results might be\nthey can show any preexisting differences between groups (or lack thereof), which is important for interpreting any differences between groups after treatment"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#which-statistic",
+    "href": "summary_stats_in_r.html#which-statistic",
+    "title": "Summary Statistics  in R",
+    "section": "Which statistic?",
+    "text": "Which statistic?\n\nCategorical variables:\n\ncounts\n\n\n\nContinuous variables:\n\ncentral tendency\nvariability\n\n\nFor categorical variables, summary statistics are generally limited to counts in each category (for example, how many patients tested positive and negative for CMV?).\nFor continuous variables, there are many more options. Summary statistics generally focus on central tendency and variability. In other words, where on the scale are the data located, and how spread out are the data?"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#continuous-variables",
+    "href": "summary_stats_in_r.html#continuous-variables",
+    "title": "Summary Statistics in R",
+    "section": "Continuous variables",
+    "text": "Continuous variables\nFor example, consider a variable like age. A measure of central tendency would tell you, generally, how old are the research subjects? Is this a pediatric population, or adult?\nExamples of statistics that capture central tendency are the mean and the median. Let’s say the mean age of participants in our study was 45. Now you have an idea of where on the scale we are — this is not a population of children, nor is it a study about advanced age.\nBut how spread out are the data? This could be a population sampled from across the lifespan, with participants ranging from 5 to 90, or it could be a focused investigation of people in middle age, with all of the subjects in their 40s or even in their mid-40s.\nExamples of statistics that capture variability are variance, standard deviation, interquartile range, and range.\n\nLearning connection\nWe won’t get into the mathematical defintions of each of these statistics here, but if you’d like a refresher, check out these excellent Khan academy videos:\n\nStatistics Intro: Mean, Median, and Mode\nMeasures of Spread: Range, Variance, and Standard Deviation\nInterquartile Range (IQR)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#central-tendency",
+    "href": "summary_stats_in_r.html#central-tendency",
+    "title": "Summary Statistics  in R",
+    "section": "Central tendency",
+    "text": "Central tendency\n\nMeasures of central tendency:\n\nmean\nmedian\n\n\nFor example, consider a variable like age. A measure of central tendency would tell you, generally, how old are the research subjects? Is this a pediatric population, or adult?\n[click]Examples of statistics that capture central tendency are the mean and the median. Let’s say the mean age of participants in our study was 45. Now you have an idea of where on the scale we are — this is not a population of children, nor is it a study about advanced age."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#variability",
+    "href": "summary_stats_in_r.html#variability",
+    "title": "Summary Statistics  in R",
+    "section": "Variability",
+    "text": "Variability\n\nMeasures of variability:\n\nvariance\nstandard deviation\ninterquartile range\nrange\n\n\nBut how spread out are the data? This could be a population sampled from across the lifespan, with participants ranging from 5 to 90, or it could be a focused investigation of people in middle age, with all of the subjects in their 40s or even in their mid-40s.\nExamples of statistics that capture variability are variance, standard deviation, interquartile range, and range."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#learning-connection-background-color36bfed",
+    "href": "summary_stats_in_r.html#learning-connection-background-color36bfed",
+    "title": "Summary Statistics in R",
+    "section": "Learning connection {{background-color=“#36BFED”}}",
+    "text": "Learning connection {{background-color=“#36BFED”}}\nWe won’t get into the mathematical definitions of each of these statistics here, but if you’d like a refresher, check out these excellent Khan academy videos:\n\nStatistics Intro: Mean, Median, and Mode\nMeasures of Spread: Range, Variance, and Standard Deviation\nInterquartile Range (IQR)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#learning-connection",
+    "href": "summary_stats_in_r.html#learning-connection",
+    "title": "Summary Statistics in R",
+    "section": "Learning connection",
+    "text": "Learning connection\nWe won’t get into the mathematical definitions of each of these statistics here, but if you’d like a refresher, check out these excellent Khan academy videos:\n\nStatistics Intro: Mean, Median, and Mode\nMeasures of Spread: Range, Variance, and Standard Deviation\nInterquartile Range (IQR)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-folder-learning-connection",
+    "href": "summary_stats_in_r.html#fa-folder-learning-connection",
+    "title": "Summary Statistics in R",
+    "section": " Learning connection",
+    "text": "Learning connection\nWe won’t get into the mathematical definitions of each of these statistics here, but if you’d like a refresher, check out these excellent Khan academy videos:\n\nStatistics Intro: Mean, Median, and Mode\nMeasures of Spread: Range, Variance, and Standard Deviation\nInterquartile Range (IQR)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learning-connection",
+    "href": "summary_stats_in_r.html#fa-book-open-learning-connection",
+    "title": "Summary Statistics in R",
+    "section": " Learning connection",
+    "text": "Learning connection\nNew test\nWe won’t get into the mathematical definitions of each of these statistics here, but if you’d like a refresher, check out these excellent Khan academy videos:\n\nStatistics Intro: Mean, Median, and Mode\nMeasures of Spread: Range, Variance, and Standard Deviation\nInterquartile Range (IQR)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\nWe won’t get into the mathematical definitions of each of these statistics here, but if you’d like a refresher, check out these excellent Khan academy videos:\n\nStatistics Intro: Mean, Median, and Mode\nMeasures of Spread: Range, Variance, and Standard Deviation\nInterquartile Range (IQR)\n\n\nI’ve got a few of these “learn more” slides thrown in throughout the presentation. They include links to resources I like for learning more about the topics we’re covering. I won’t click through to any of these resources now, but you have access to the slides so feel free to go back and review these links later if you like!"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#come-to-r-office-hours",
+    "href": "summary_stats_in_r.html#come-to-r-office-hours",
+    "title": "Summary Statistics  in R",
+    "section": "Come to R Office Hours!",
+    "text": "Come to R Office Hours!\n\nSet up a meeting to get live help with your R code from our most experienced useRs\nOffice hours appointments can be one-on-one or open to the community\n\nLink to calendar: https://bit.ly/chopROfficeHours\n\nWe’re looking for more volunteers to lead appointments! Get in touch: hartmanr1@chop.edu\n\nWe have regular office hours appointments available to get R help. We’re offering two kinds of appointments: one-on-one, if you want individual help, or open appointments that are more of a community conversation about whatever R questions people bring up that day. The open appointments can be particularly valuable to attend if you want to hear other people’s questions about R but maybe don’t have a project of your own that you’re troubleshooting at the moment. We set up a calendar online where you can book an appointment. [click] And if you like this idea and you’re an experienced R user yourself, consider joining us to offer appointments! It’s just whatever times work for you, so we can set up a schedule around whatever other work you’ve got going on. Reach out to me via email or slack for details."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#what-were-covering-today",
+    "href": "summary_stats_in_r.html#what-were-covering-today",
+    "title": "Summary Statistics  in R",
+    "section": "What we’re covering today",
+    "text": "What we’re covering today\n\n\nHow to get summary stats in R for both continuous and categorical variables\n\n\n\n\nHow to create a publication-ready Table 1\n\n\n\n\nNOT teaching the full analysis in R pipeline – we’re glossing over importing data and tidying data\n\n\n\n\nNOT teaching formal statistical modeling (e.g. hypothesis testing)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#join-the-chop-r-user-group",
+    "href": "summary_stats_in_r.html#join-the-chop-r-user-group",
+    "title": "Summary Statistics  in R",
+    "section": "Join the CHOP R User Group",
+    "text": "Join the CHOP R User Group\n\n\n\n\n\nFriendly help troubleshooting your R code\nAnnouncements for upcoming talks, workshops, and conferences\n\n\n\nLink to join: https://bit.ly/chopRusers\n\nJust a few announcements before we get started. For anyone here today that isn’t already part of the CHOP R User group, I strongly encourage you to join (it is also open to Penn folks). I can’t overstate the importance of having a place to go to ask for help when you start coding. The CHOP R User group has more than 400 members from all departments. This is great place to network with other R users, get help with coding problems, and learn about new packages, webinars, and conferences. We also have semi-regular meetings and workshops, like this one."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#summary-statistics-in-r",
+    "href": "summary_stats_in_r.html#summary-statistics-in-r",
+    "title": "Summary Statistics in R",
+    "section": "Summary Statistics in R",
+    "text": "Summary Statistics in R\n\nOkay! So this talk is a quick dip into some 102-level R. In other words, if you’ve had a little exposure to R before, such as through an Intro to R workshop, this is hopefully the right level for you now. If you’re completely brand new to R, first of all: Welcome! You may find it tricky to actively follow along with the code today since I’m going to skim over some of the initial steps, but go ahead and give it a try, or just listen and watch if that feels more like the right speed.\nOur topic is getting summary statistics in R, the first step to pretty much any analysis. We’ll also look at how to present those summary stats in a lovely, publication-ready Table 1. Please feel very free to stop me with questions, either by unmuting or in the chat – I’ve left plenty of extra time in the talk, so there’s space for us to stop and talk about things."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#coming-soon-r-101",
+    "href": "summary_stats_in_r.html#coming-soon-r-101",
+    "title": "Summary Statistics  in R",
+    "section": "Coming soon! R 101",
+    "text": "Coming soon! R 101\nWe are offering the popular R 101 workshop again this August!\nLink to sign up: \n\nAttended an R 101 workshop in the past? Consider joining as a TA!\n\nNote that if you’ve attended R 101 in the past, this will be the same content again; it’s not a new workshop."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#getting-summary-statistics-in-r",
+    "href": "summary_stats_in_r.html#getting-summary-statistics-in-r",
+    "title": "Summary Statistics  in R",
+    "section": "Getting Summary Statistics in R",
+    "text": "Getting Summary Statistics in R\nTwo options:\n\nWork in the cloud: https://bit.ly/chopr_rstudio\nWork on your computer: https://github.com/arcus/education_r_environment\n\n\nTime to start coding! By far the best way to learn R is to practice, so work through this code yourself as you follow along.\nThis link will open an instance of mybinder, which gives you an anonymous way to work with the code right in your browser without having to install anything or make an account.\nYou can also get all of the code for this talk directly from our GitHub and download it to work on your own machine."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more-1",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more-1",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\nThere’s a lot of helpful information (including examples and tutorials) on the package websites for each of the packages we’ll be using:\n\ntidyverse\nmedicaldata\ngtsummary"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#section-2",
+    "href": "summary_stats_in_r.html#section-2",
+    "title": "Summary Statistics  in R",
+    "section": "",
+    "text": "Animation"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#section-3",
+    "href": "summary_stats_in_r.html#section-3",
+    "title": "Summary Statistics  in R",
+    "section": "",
+    "text": "Implicit\nAnimation"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#slide-title",
+    "href": "summary_stats_in_r.html#slide-title",
+    "title": "Summary Statistics  in R",
+    "section": "Slide Title",
+    "text": "Slide Title\nHere is an image:\n\nSome text after the image."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#the-packages-well-be-using-today",
+    "href": "summary_stats_in_r.html#the-packages-well-be-using-today",
+    "title": "Summary Statistics  in R",
+    "section": "The packages we’ll be using today",
+    "text": "The packages we’ll be using today\n  \n\nFirst, we need to load the tidyverse packages, since we’ll be using several functions that come in the tidyverse. We’ll also load the medicaldata package, which includes several publicly available data sets with medical data. And we’ll load the gtsummary package for creating publication-ready tables."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#load-packages",
+    "href": "summary_stats_in_r.html#load-packages",
+    "title": "Summary Statistics  in R",
+    "section": "Load packages",
+    "text": "Load packages\nOnly if needed:\n\ninstall.packages(c(\"tidyverse\", \"medicaldata\", \"gtsummary\"))\n\n Each R session:\n\nlibrary(tidyverse)\nlibrary(medicaldata) \nlibrary(gtsummary)\n\n\nIf you’re running this on your own computer rather than in the cloud instance we set up, you may need to run install.packages first if you haven’t ever used these packages before. If you’re working in the cloud, then all three packages have already been installed for you."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#the-data",
+    "href": "summary_stats_in_r.html#the-data",
+    "title": "Summary Statistics  in R",
+    "section": "The data",
+    "text": "The data\nIn the console or in the exercises rmd file, run the following command:\n\nhead(cytomegalovirus)\n\n\n\n  ID age sex race                    diagnosis diagnosis.type\n1  1  61   1    0       acute myeloid leukemia              1\n2  2  62   1    1         non-Hodgkin lymphoma              0\n3  3  63   0    1         non-Hodgkin lymphoma              0\n4  4  33   0    1             Hodgkin lymphoma              0\n5  5  54   0    1 acute lymphoblastic leukemia              0\n6  6  55   1    1                myelofibrosis              1\n  time.to.transplant prior.radiation prior.chemo prior.transplant recipient.cmv\n1               5.16               0           2                0             1\n2              79.05               1           3                0             0\n3              35.58               0           4                0             1\n4              33.02               1           4                0             1\n5              11.40               0           5                0             1\n6               2.43               0           0                0             1\n  donor.cmv donor.sex TNC.dose CD34.dose CD3.dose CD8.dose TBI.dose C1/C2 aKIRs\n1         0         0    18.31      2.29     3.21     0.95      200     0     1\n2         0         1     4.26      2.04       NA       NA      200     1     5\n3         1         0     8.09      6.97     2.19     0.59      200     0     3\n4         0         1    21.02      6.09     4.87     2.32      200     0     2\n5         1         0    14.70      2.36     6.55     2.40      400     0     6\n6         1         1     4.29      6.91     2.53     0.86      200     0     2\n  cmv time.to.cmv agvhd time.to.agvhd cgvhd time.to.cgvhd\n1   1        3.91     1          3.55     0          6.28\n2   0       65.12     0         65.12     0         65.12\n3   0        3.75     0          3.75     0          3.75\n4   0       48.49     1         28.55     1         10.45\n5   0        4.37     1          2.79     0          4.37\n6   1        4.53     1          3.88     0          6.87\n\n\n\nLet’s take a look at the data. [click]\nYou should see the first six rows of the cytomegalovirus data frame, which look like this.\nNote that this is one of the example datasets that comes built-in when you install the medicaldata package, so it’s already available to you without you having to read it in or download anything.\nFor those of you that have worked in R before, you know importing data is a whole thing, so we’re definitely skipping over a potentially tricky bit by using built-in data, but we only have so much time today and I wanted to be able to put as much time as possible towards actually working with the summary statistics. So we’re just merrily skipping past all the importing and tidying that would normally happen."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#section",
+    "href": "summary_stats_in_r.html#section",
+    "title": "Summary Statistics  in R",
+    "section": "",
+    "text": "# Fill in the spot we created for a plot\noutput$phonePlot &lt;- renderPlot({\n  # Render a barplot\n})"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#section-1",
+    "href": "summary_stats_in_r.html#section-1",
+    "title": "Summary Statistics  in R",
+    "section": "",
+    "text": "# Fill in the spot we created for a plot\noutput$phonePlot &lt;- renderPlot({\n  # Render a barplot\n  barplot(WorldPhones[,input$region]*1000, \n          main=input$region,\n          ylab=\"Number of Telephones\",\n          xlab=\"Year\")\n})"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#the-data-1",
+    "href": "summary_stats_in_r.html#the-data-1",
+    "title": "Summary Statistics  in R",
+    "section": "The data",
+    "text": "The data\nhead(cytomegalovirus) |> \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\nage\nsex\nrace\ndiagnosis\ndiagnosis.type\ntime.to.transplant\nprior.radiation\nprior.chemo\nprior.transplant\nrecipient.cmv\ndonor.cmv\ndonor.sex\nTNC.dose\nCD34.dose\nCD3.dose\nCD8.dose\nTBI.dose\nC1/C2\naKIRs\ncmv\ntime.to.cmv\nagvhd\ntime.to.agvhd\ncgvhd\ntime.to.cgvhd\n\n\n\n\n1\n61\n1\n0\nacute myeloid leukemia\n1\n5.16\n0\n2\n0\n1\n0\n0\n18.31\n2.29\n3.21\n0.95\n200\n0\n1\n1\n3.91\n1\n3.55\n0\n6.28\n\n\n2\n62\n1\n1\nnon-Hodgkin lymphoma\n0\n79.05\n1\n3\n0\n0\n0\n1\n4.26\n2.04\nNA\nNA\n200\n1\n5\n0\n65.12\n0\n65.12\n0\n65.12\n\n\n3\n63\n0\n1\nnon-Hodgkin lymphoma\n0\n35.58\n0\n4\n0\n1\n1\n0\n8.09\n6.97\n2.19\n0.59\n200\n0\n3\n0\n3.75\n0\n3.75\n0\n3.75\n\n\n4\n33\n0\n1\nHodgkin lymphoma\n0\n33.02\n1\n4\n0\n1\n0\n1\n21.02\n6.09\n4.87\n2.32\n200\n0\n2\n0\n48.49\n1\n28.55\n1\n10.45\n\n\n5\n54\n0\n1\nacute lymphoblastic leukemia\n0\n11.40\n0\n5\n0\n1\n1\n0\n14.70\n2.36\n6.55\n2.40\n400\n0\n6\n0\n4.37\n1\n2.79\n0\n4.37\n\n\n6\n55\n1\n1\nmyelofibrosis\n1\n2.43\n0\n0\n0\n1\n1\n1\n4.29\n6.91\n2.53\n0.86\n200\n0\n2\n1\n4.53\n1\n3.88\n0\n6.87\n\n\n\n\n\nYou should see the first six rows of the cytomegalovirus data frame, which look like this.\nNote that this is one of the example datasets that comes built-in when you install the medicaldata package, so it’s already available to you without you having to read it in or download anything.\nFor those of you that have worked in R before, you know importing data is a whole thing, so we’re definitely skipping over a potentially tricky bit by using built-in data, but we only have so much time today and I wanted to be able to put as much time as possible towards actually working with the summary statistics. So we’re just merrily skipping past all the importing and tidying that would normally happen."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more-2",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more-2",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\n\nTo learn more about the cytomegalovirus data and the study behind it, read Sobecks et al. 2011.\nTo learn more about the medicaldata R package these data are published in, see the medicaldata package website – and note that the maintainers are always looking for more data contributions!"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#using-summary",
+    "href": "summary_stats_in_r.html#using-summary",
+    "title": "Summary Statistics  in R",
+    "section": "Using summary()",
+    "text": "Using summary()\nFirst try running summary() on just the age column:\n\nsummary(cytomegalovirus$age)\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  29.00   46.00   55.00   52.44   61.00   67.00 \n\n\n\nNow try running summary on the whole dataframe all at once:\n\nsummary(cytomegalovirus)\n\n\n\nThe best place to start your exploratory data analysis is often the summary function. You can run it on an individual column, or on a whole dataframe.\nFor those of you who are (like me) typo-prone, I recommend using tab-completion for the dataframe name. Start typing cyt and then pause a moment and you should see RStudio suggest the correct name. Hit tab to fill it in.\nSo let’s look at what we get from running summary on the age column. Min is 29, Max is 67. The youngest patient is 29 and the oldest is 67. It’s also printing the 1st Quartile (25th percentile), Median, Mean, and 3rd Quartile (75th percentile) for us.\n[click] You should see a summary of each of the 26 variables in the data, with a set of summary statistics printed under each. This is a great way to get a lot of information quickly. The summary function is clever enough to print different summary statsitics for different variable types — it won’t try to calculate the mean or median of a categorical variable (called a factor in R), for example, since that wouldn’t be meaningful.\nThe summary function checks what type of variable (numeric, categorical/factor, etc.) is in each column and returns sensible summary statistics for each. For a factor, you get the count for each level, and also a count of how many observations are missing. For numeric variables, you get the range (minimum and maximum), the 1st quartile, median, mean, 3rd quartile, and the count of missing observations.\nIn this dataframe, most of the data are numeric. There is one column, diagnosis, that shows up as character. If you look at the help documentation for the data set (?cytomegalovirus), you’ll see that should actually be a factor with 13 levels. If it were a factor, we could get more useful summary statistics for it, too."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#using-summary-output",
+    "href": "summary_stats_in_r.html#using-summary-output",
+    "title": "Summary Statistics  in R",
+    "section": "Using summary()",
+    "text": "Using summary()\n\n       ID             age             sex              race       \n Min.   : 1.00   Min.   :29.00   Min.   :0.0000   Min.   :0.0000  \n 1st Qu.:16.75   1st Qu.:46.00   1st Qu.:0.0000   1st Qu.:1.0000  \n Median :32.50   Median :55.00   Median :1.0000   Median :1.0000  \n Mean   :32.50   Mean   :52.44   Mean   :0.5312   Mean   :0.9062  \n 3rd Qu.:48.25   3rd Qu.:61.00   3rd Qu.:1.0000   3rd Qu.:1.0000  \n Max.   :64.00   Max.   :67.00   Max.   :1.0000   Max.   :1.0000  \n                                                                  \n  diagnosis         diagnosis.type   time.to.transplant prior.radiation \n Length:64          Min.   :0.0000   Min.   :  1.84     Min.   :0.0000  \n Class :character   1st Qu.:0.0000   1st Qu.:  8.15     1st Qu.:0.0000  \n Mode  :character   Median :1.0000   Median : 13.70     Median :0.0000  \n                    Mean   :0.5172   Mean   : 30.85     Mean   :0.1719  \n                    3rd Qu.:1.0000   3rd Qu.: 33.28     3rd Qu.:0.0000  \n                    Max.   :1.0000   Max.   :173.83     Max.   :1.0000  \n                    NA's   :6        NA's   :1                          \n  prior.chemo    prior.transplant recipient.cmv     donor.cmv     \n Min.   :0.000   Min.   :0.0000   Min.   :0.000   Min.   :0.0000  \n 1st Qu.:1.000   1st Qu.:0.0000   1st Qu.:0.000   1st Qu.:0.0000  \n Median :2.000   Median :0.0000   Median :1.000   Median :1.0000  \n Mean   :2.188   Mean   :0.1875   Mean   :0.625   Mean   :0.5938  \n 3rd Qu.:3.000   3rd Qu.:0.0000   3rd Qu.:1.000   3rd Qu.:1.0000  \n Max.   :8.000   Max.   :1.0000   Max.   :1.000   Max.   :1.0000  \n                                                                  \n   donor.sex      TNC.dose       CD34.dose         CD3.dose       CD8.dose    \n Min.   :0.0   Min.   : 2.06   Min.   : 2.040   Min.   :1.08   Min.   :0.160  \n 1st Qu.:0.0   1st Qu.: 6.89   1st Qu.: 4.165   1st Qu.:3.08   1st Qu.:0.805  \n Median :0.5   Median :10.48   Median : 5.840   Median :3.98   Median :1.200  \n Mean   :0.5   Mean   :10.44   Mean   : 5.546   Mean   :4.30   Mean   :1.323  \n 3rd Qu.:1.0   3rd Qu.:13.42   3rd Qu.: 6.990   3rd Qu.:5.48   3rd Qu.:1.663  \n Max.   :1.0   Max.   :21.02   Max.   :12.510   Max.   :8.18   Max.   :3.190  \n                                                NA's   :3      NA's   :12     \n    TBI.dose         C1/C2            aKIRs            cmv        \n Min.   :200.0   Min.   :0.0000   Min.   :1.000   Min.   :0.0000  \n 1st Qu.:200.0   1st Qu.:0.0000   1st Qu.:1.000   1st Qu.:0.0000  \n Median :200.0   Median :1.0000   Median :2.000   Median :0.0000  \n Mean   :287.5   Mean   :0.5156   Mean   :2.844   Mean   :0.4062  \n 3rd Qu.:400.0   3rd Qu.:1.0000   3rd Qu.:4.250   3rd Qu.:1.0000  \n Max.   :400.0   Max.   :1.0000   Max.   :6.000   Max.   :1.0000  \n                                                                  \n  time.to.cmv         agvhd        time.to.agvhd        cgvhd       \n Min.   : 0.430   Min.   :0.0000   Min.   : 0.660   Min.   :0.0000  \n 1st Qu.: 2.712   1st Qu.:0.0000   1st Qu.: 2.623   1st Qu.:0.0000  \n Median : 5.030   Median :0.0000   Median : 5.800   Median :0.0000  \n Mean   :13.206   Mean   :0.4062   Mean   :15.605   Mean   :0.4375  \n 3rd Qu.:16.012   3rd Qu.:1.0000   3rd Qu.:21.410   3rd Qu.:1.0000  \n Max.   :84.470   Max.   :1.0000   Max.   :85.190   Max.   :1.0000  \n                                                                    \n time.to.cgvhd   \n Min.   : 0.820  \n 1st Qu.: 3.848  \n Median : 6.735  \n Mean   :10.304  \n 3rd Qu.:11.307  \n Max.   :65.120"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#convert-to-factor",
+    "href": "summary_stats_in_r.html#convert-to-factor",
+    "title": "Summary Statistics  in R",
+    "section": "Convert to factor",
+    "text": "Convert to factor\nConvert diagnosis column from character to factor:\n\ncytomegalovirus$diagnosis &lt;- as.factor(cytomegalovirus$diagnosis)\n\n\nRe-run the summary for that column:\n\nsummary(cytomegalovirus$diagnosis)\n\n\n\nacute lymphoblastic leukemia       acute myeloid leukemia \n                           1                           12 \n             aplastic anemia chronic lymphocytic leukemia \n                           1                            5 \n    chronic myeloid leukemia            congenital anemia \n                           4                            1 \n            Hodgkin lymphoma            multiple myelomas \n                           3                            7 \n    myelodysplastic syndrome                myelofibrosis \n                           9                            4 \n myeloproliferative disorder         non-Hodgkin lymphoma \n                           1                           12 \n        renal cell carcinoma \n                           4 \n\n\n\nNow we get counts for each type of diagnosis! Much better.\nThere are also several other variables that are represented in the data as 0 or 1, but should really be considered as factors. We’ll clean those up now."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#convert-to-factor-1",
+    "href": "summary_stats_in_r.html#convert-to-factor-1",
+    "title": "Summary Statistics  in R",
+    "section": "Convert to factor",
+    "text": "Convert to factor\n\ncytomegalovirus &lt;- cytomegalovirus |&gt; \n  mutate(sex = factor(sex, levels = c(0, 1), labels = c(\"Female\", \"Male\")),\n         race = factor(race, levels = c(0, 1), labels = c(\"African-American\", \"White\")),\n         diagnosis.type = factor(diagnosis.type, levels = c(0, 1), labels = c(\"Lymphoid\", \"Myeloid\")),\n         prior.radiation = factor(prior.radiation, levels = c(0, 1), labels = c(\"No\", \"Yes\")),\n         prior.transplant = factor(prior.transplant, levels = c(0, 1), labels = c(\"No\", \"Yes\")),\n         donor.cmv = factor(donor.cmv, levels = c(0, 1), labels = c(\"Negative\", \"Positive\")),\n         recipient.cmv = factor(recipient.cmv, levels = c(0, 1), labels = c(\"Negative\", \"Positive\")),\n         donor.sex = factor(donor.sex, levels = c(0, 1), labels = c(\"Male\", \"Female\")),\n         `C1/C2` = factor(`C1/C2`, levels = c(0, 1), labels = c(\"Heterozygous\", \"Homozygous\")),\n         cmv = factor(cmv, levels = c(0, 1), labels = c(\"No\", \"Yes\")),\n         agvhd = factor(agvhd, levels = c(0, 1), labels = c(\"No\", \"Yes\")),\n         cgvhd = factor(cgvhd, levels = c(0, 1), labels = c(\"No\", \"Yes\"))\n         )\n\n\nWe could do it with individual commands using as.factor like we did for diagnosis, but instead we’ll take a look at another approach. Also note that this code is ready for you in the summary_stats_exercises.Rmd file — no need to try to type this all out now.\nLet’s break that down. We’re using mutate to make changes to the columns in the dataframe. You can use mutate to create new columns, but in this case we’re just overwriting existing columns. Within the mutate command, we have a different argument for each column we want to change. They all take the form column_name = factor(column_name, levels = c(), labels = c()) where the levels are the existing values in the colum already (e.g. 0 and 1) and labels are what we want them to show up as in the factor (e.g. “no” and “yes”). Note that the order of levels and labels has to line up, so the first level will get the first label, and the second level will get the second label, etc. To learn more about the factor() command, check out its help documentation with ?factor."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more-3",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more-3",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\nA few things from the above code that you might want to look into further:\n\nPipes! See R4DS Ch 18: Pipes, or the not-quite-published 2nd edition R4DS section on pipes, which uses the new |&gt; instead of %&gt;%.\nIf you’re curious, a comparison of the new and old pipes.\nMore about mutate and data transformation in general in R4DS section on mutate"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-circle-question-troubleshooting",
+    "href": "summary_stats_in_r.html#fa-circle-question-troubleshooting",
+    "title": "Summary Statistics  in R",
+    "section": " Troubleshooting",
+    "text": "Troubleshooting\nIf you make a mistake modifying the data, how can you undo it?\nIf this were a dataset we read in from an external file (like a .csv), you could just read it in again to get a fresh copy. But how do you get a fresh copy of a built-in dataset?\n\nTo reset the data to its original state, run rm(cytomegalovirus) in the console. This will delete your current version of the data from R’s environment, and you’ll just be left with the original clean copy from the medicaldata package.\n\nRemember: If you run rm(cytomegalovirus) to reset the data, you’ll need to re-run any changes you made to the data that you want to keep, like converting diagnosis to a factor above."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#summary-again",
+    "href": "summary_stats_in_r.html#summary-again",
+    "title": "Summary Statistics  in R",
+    "section": "Summary again",
+    "text": "Summary again\nLet’s run summary on the whole dataframe again to see the results now that we’ve cleaned up the column types.\n\nsummary(cytomegalovirus)\n\n\n\n       ID             age            sex                   race   \n Min.   : 1.00   Min.   :29.00   Female:30   African-American: 6  \n 1st Qu.:16.75   1st Qu.:46.00   Male  :34   White           :58  \n Median :32.50   Median :55.00                                    \n Mean   :32.50   Mean   :52.44                                    \n 3rd Qu.:48.25   3rd Qu.:61.00                                    \n Max.   :64.00   Max.   :67.00                                    \n                                                                  \n                        diagnosis   diagnosis.type time.to.transplant\n acute myeloid leukemia      :12   Lymphoid:28     Min.   :  1.84    \n non-Hodgkin lymphoma        :12   Myeloid :30     1st Qu.:  8.15    \n myelodysplastic syndrome    : 9   NA's    : 6     Median : 13.70    \n multiple myelomas           : 7                   Mean   : 30.85    \n chronic lymphocytic leukemia: 5                   3rd Qu.: 33.28    \n chronic myeloid leukemia    : 4                   Max.   :173.83    \n (Other)                     :15                   NA's   :1         \n prior.radiation  prior.chemo    prior.transplant  recipient.cmv    donor.cmv \n No :53          Min.   :0.000   No :52           Negative:24    Negative:26  \n Yes:11          1st Qu.:1.000   Yes:12           Positive:40    Positive:38  \n                 Median :2.000                                                \n                 Mean   :2.188                                                \n                 3rd Qu.:3.000                                                \n                 Max.   :8.000                                                \n                                                                              \n  donor.sex     TNC.dose       CD34.dose         CD3.dose       CD8.dose    \n Male  :32   Min.   : 2.06   Min.   : 2.040   Min.   :1.08   Min.   :0.160  \n Female:32   1st Qu.: 6.89   1st Qu.: 4.165   1st Qu.:3.08   1st Qu.:0.805  \n             Median :10.48   Median : 5.840   Median :3.98   Median :1.200  \n             Mean   :10.44   Mean   : 5.546   Mean   :4.30   Mean   :1.323  \n             3rd Qu.:13.42   3rd Qu.: 6.990   3rd Qu.:5.48   3rd Qu.:1.663  \n             Max.   :21.02   Max.   :12.510   Max.   :8.18   Max.   :3.190  \n                                              NA's   :3      NA's   :12     \n    TBI.dose              C1/C2        aKIRs        cmv      time.to.cmv    \n Min.   :200.0   Heterozygous:31   Min.   :1.000   No :38   Min.   : 0.430  \n 1st Qu.:200.0   Homozygous  :33   1st Qu.:1.000   Yes:26   1st Qu.: 2.712  \n Median :200.0                     Median :2.000            Median : 5.030  \n Mean   :287.5                     Mean   :2.844            Mean   :13.206  \n 3rd Qu.:400.0                     3rd Qu.:4.250            3rd Qu.:16.012  \n Max.   :400.0                     Max.   :6.000            Max.   :84.470  \n                                                                            \n agvhd    time.to.agvhd    cgvhd    time.to.cgvhd   \n No :38   Min.   : 0.660   No :36   Min.   : 0.820  \n Yes:26   1st Qu.: 2.623   Yes:28   1st Qu.: 3.848  \n          Median : 5.800            Median : 6.735  \n          Mean   :15.605            Mean   :10.304  \n          3rd Qu.:21.410            3rd Qu.:11.307  \n          Max.   :85.190            Max.   :65.120  \n                                                    \n\n\n\n[click] The results are much more useful now that we’ve cleaned up the column types!"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#individual-summary-statistics",
+    "href": "summary_stats_in_r.html#individual-summary-statistics",
+    "title": "Summary Statistics  in R",
+    "section": "Individual summary statistics",
+    "text": "Individual summary statistics\nWhat is the shortest time from diagnosis to transplant in the data?\n\n\nmin(cytomegalovirus$time.to.transplant)\n\n\n\n[1] NA\n\n\n\n\n\n?min\n\nFrom the help documentation for min:\n\nUsage\nmax(..., na.rm = FALSE)\nmin(..., na.rm = FALSE)\n\n\nWe can get the minimum of any numeric variable with the function min.\n[click] Uh-oh! It returns NA for this because there is a missing observation somewhere in this column. [click] If you look at ?min, you’ll see the default for this function (and most statistics functions in R) is na.rm = FALSE, which basically means “only compute a value if there are no missing observations”.\n\n\n\nYou can see in the help documentation for the data (?cytomegalovirus) that time.to.transplant is in months."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#na-rm-false",
+    "href": "summary_stats_in_r.html#na-rm-false",
+    "title": "Summary Statistics  in R",
+    "section": "na-rm = FALSE",
+    "text": "na-rm = FALSE\n\nmin(cytomegalovirus$time.to.transplant, na.rm = TRUE)\n\n\n\n[1] 1.84\n\n\n\nQuick aside here about a handy shortcut when you’re working in the console. If you want to tweak a line of code you just ran, you can use the up arrow on your keyboard to bring up the last command you ran. Then you can edit it, and hit enter to run the tweaked version.\nTo get the minimum for this column ignoring the missing value, use the up arrow to bring up your last command and add na.rm = TRUE."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#more-individual-statistics",
+    "href": "summary_stats_in_r.html#more-individual-statistics",
+    "title": "Summary Statistics  in R",
+    "section": "More individual statistics",
+    "text": "More individual statistics\nWhat is the longest time from diagnosis to transplant?\n\nmax(cytomegalovirus$time.to.transplant, na.rm = TRUE)\n\n[1] 173.83\n\n\n\nWhat is the mean time to transplant?\n\nmean(cytomegalovirus$time.to.transplant, na.rm = TRUE)\n\n[1] 30.84556\n\n\n\n\nMore individual statistics:\n\nmedian(cytomegalovirus$time.to.transplant, na.rm = TRUE)\n\n[1] 13.7\n\n\n\n\n\nvar(cytomegalovirus$time.to.transplant, na.rm = TRUE) # variance\n\n[1] 1638.105\n\n\n\n\n\nsd(cytomegalovirus$time.to.transplant, na.rm = TRUE) # standard deviation\n\n[1] 40.47351\n\n\n\nSince we’re running these all on the same column, you can use the up arrow to tweak the command each time."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#quantiles",
+    "href": "summary_stats_in_r.html#quantiles",
+    "title": "Summary Statistics  in R",
+    "section": "Quantiles",
+    "text": "Quantiles\nThe median is the 50th percentile, but you may want other values, like the 25th and 75th percentile. You can get any you want with the quantile function:\n\n# the default quantiles\nquantile(cytomegalovirus$time.to.transplant, \n         na.rm = TRUE) \n\n\n\n    0%    25%    50%    75%   100% \n  1.84   8.15  13.70  33.28 173.83 \n\n\n\n\n# custom quantiles\nquantile(cytomegalovirus$time.to.transplant, \n         probs = c(.1, .2, .3, .4), \n         na.rm = TRUE)\n\n   10%    20%    30%    40% \n 4.156  5.542  8.848 10.924"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-rocket-coding-challenge-1",
+    "href": "summary_stats_in_r.html#fa-rocket-coding-challenge-1",
+    "title": "Summary Statistics  in R",
+    "section": " Coding Challenge 1",
+    "text": "Coding Challenge 1\n\nYour turn!\nLook in the summary_stats_exercises.rmd file to find your first coding challenge.\n\n\n\n\n−+\n05:00\n\n\n\n\nDon’t work through the whole exercise file now. When you reach the lines that say STOP HERE!  Go back to the module to continue., pause your work and come back here."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#counts",
+    "href": "summary_stats_in_r.html#counts",
+    "title": "Summary Statistics  in R",
+    "section": "Counts",
+    "text": "Counts\nFor categorical variables, summary statistics are just counts.\nWe’ll look at two ways to get the counts for a single categorical variable in R:\n\nsummary(cytomegalovirus$diagnosis.type)\n\n\n\nLymphoid  Myeloid     NA's \n      28       30        6 \n\n\n\n\ntable(cytomegalovirus$diagnosis.type)\n\n\n\n\nLymphoid  Myeloid \n      28       30 \n\n\n\n\n\ntable(cytomegalovirus$diagnosis.type, useNA = \"always\")\n\n\n\n\nLymphoid  Myeloid     &lt;NA&gt; \n      28       30        6 \n\n\n\nYou can use summary to get counts for factors, but it won’t work on character vectors, whereas table works to get counts on factors or characters.\nNote that table doesn’t give you any information about missing values by default, though – it just gives counts for observations with data. If you want to see missing values using table, add the argument useNA = \"always\""
+  },
+  {
+    "objectID": "summary_stats_in_r.html#more-counts",
+    "href": "summary_stats_in_r.html#more-counts",
+    "title": "Summary Statistics  in R",
+    "section": "More counts",
+    "text": "More counts\nTo get counts of two categorical variables together (e.g. what is the diagnosis type breakdown by recipient CMV status?), use cross-tabulation, also called “crosstabs” or “two-way frequency tables”.\n\nxtabs(~cmv + diagnosis.type, \n      data = cytomegalovirus)\n\n\n\n     diagnosis.type\ncmv   Lymphoid Myeloid\n  No        15      19\n  Yes       13      11"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#crosstabs",
+    "href": "summary_stats_in_r.html#crosstabs",
+    "title": "Summary Statistics  in R",
+    "section": "Crosstabs",
+    "text": "Crosstabs\nTo get the results of a chi-squared test on the crosstabs, you can apply the summary function to an xtabs object.\nOption 1:\n\n# you can nest the summary and xtabs functions\nsummary(xtabs(~cmv + diagnosis.type, \n              data = cytomegalovirus))\n\nOption 2:\n\n# or you can save the xtabs object and then run summary() on it\ncmv_and_diagnosistype &lt;- xtabs(~cmv + diagnosis.type, \n                               data = cytomegalovirus)\nsummary(cmv_and_diagnosistype)\n\n\n\nCall: xtabs(formula = ~cmv + diagnosis.type, data = cytomegalovirus)\nNumber of cases in table: 58 \nNumber of factors: 2 \nTest for independence of all factors:\n    Chisq = 0.569, df = 1, p-value = 0.4507\n\n\n\nAh, and see I said we weren’t going to be doing any actual hypothesis testing, but there we just ran a chi-squared test of independence!\nWe won’t get into interpreting this test right now, but I wanted to show you this because you may recognize our old friend, the summary function. summary is one of several functions in R that shows up in quite a wide range of different circumstances, and it’s smart enough to give you different output depending on what you ask it to summarize. Just like it switched what kind of descriptive statistics it printed when we used it on a numeric vs factor variable, if you run summary on a crosstab it prints out the relevant statistical test for that table!"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more-4",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more-4",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\nFor beautifully printed crosstabs, see the tbl_cross function in the gtsummary package."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-rocket-coding-challenge-2",
+    "href": "summary_stats_in_r.html#fa-rocket-coding-challenge-2",
+    "title": "Summary Statistics  in R",
+    "section": " Coding Challenge 2",
+    "text": "Coding Challenge 2\n\nYour turn!\nLook in the summary_stats_exercises.rmd file to find your next coding challenge.\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#presenting-summary-statistics-in-r",
+    "href": "summary_stats_in_r.html#presenting-summary-statistics-in-r",
+    "title": "Summary Statistics  in R",
+    "section": "Presenting Summary Statisticsin R",
+    "text": "Presenting Summary Statisticsin R\n\nTable 1 summary statistics on the cytomegalovirus data\nMany research articles begin with a table summarizing the patients or research subjects analyzed, usually broken down by condition or exposure to allow the reader to see any baseline differences between groups. For example, here is Table 1 from the paper this dataset is from.\nOne way to create a summary table would be to copy-paste all of your summary stats from R into whatever program you use to write your article. That is both error-prone and tedious, and it also means if anything changes in your data you need to re-do all of that work.\nAnother approach is creating the whole table right in R! The gtsummary package is a great way to do that."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#creating-table-1-with-gtsummary",
+    "href": "summary_stats_in_r.html#creating-table-1-with-gtsummary",
+    "title": "Summary Statistics  in R",
+    "section": "Creating Table 1 with gtsummary",
+    "text": "Creating Table 1 with gtsummary\nWe’ll recreate an approximation of the cytomegalovirus Table 1 using gtsummary:\n\n\nOften, a lot of the work you need to do to get a table to look how you want is actually data cleaning work rather than anything about the function that will actually create your table. This case is no exception.\nNote that the table breaks patients down by whether their aKIRs are 1-4 or 5-6. In the data, aKIRs are just numeric scores 1-6, so first we’ll need to create a factor for those two groups. Similarly, the table groups all patients with at least 4 prior chemo treatments as one group."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#recoding-variables-for-the-table",
+    "href": "summary_stats_in_r.html#recoding-variables-for-the-table",
+    "title": "Summary Statistics  in R",
+    "section": "Recoding variables for the table",
+    "text": "Recoding variables for the table\n\ncytomegalovirus &lt;- cytomegalovirus |&gt; \n  mutate(aKIRs_groups = if_else(aKIRs &gt; 4, \n                                \"5 to 6 aKIRs\", \n                                \"1 to 4 aKIRs\"),\n         aKIRs_groups = factor(aKIRs_groups, \n                               levels = c(\"1 to 4 aKIRs\", \"5 to 6 aKIRs\")),\n         prior.chemo_groups = if_else(prior.chemo &gt;= 4, \n                                      \"≥ 4\", \n                                      as.character(prior.chemo)),\n         prior.chemo_groups = factor(prior.chemo_groups, \n                                     levels = c(\"0\", \"1\", \"2\", \"3\", \"≥ 4\")))\n\n\nThe if_else function is what’s called a ternary operator, and it has three parts:\n\na conditional test\na value to use if the test returns TRUE\na value to use if the test returns FALSE.\n\n\nLet’s break that down.\n[click] We’re using the if_else function to recode the numeric variable aKIRs as one of two strings, “5 to 6 aKIRs” if it’s greater than 4 and “1 to 4 aKIRs” otherwise. [click] That will result in a character vector called aKIRs_groups, so then with the next line we turn it into a factor.\n[click] Then we apply the same approach to the prior.chemo variable, first we make everything greater than or equal to 4 into “≥ 4”, and set all other values to as.character() on whatever their original values were — this changes the numbers into string versions, so 0 becomes “0”, 1 becomes “1”, etc. That creates a new variable called prior.chemo_groups, but it’s a character vector, so we turn it into a factor.\n[click, click] The if_else function is what’s called a ternary operator.\nIn the aKIRs example, we first tested each value to see if it was &gt; 4. If yes, we assigned it “5 to 6 aKIRs”, and if no we assigned it to “1 to 4 aKIRs”. Note that if_else preserves missing values, so anything that was NA in aKIRs will still be NA in aKIRs_groups."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more-5",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more-5",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\nFor more on using mutate and if_else, see see the R Basics: Data Transformation sections on mutate and logical operators to see more examples of the kinds of conditional tests you can put in."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-circle-question-troubleshooting-1",
+    "href": "summary_stats_in_r.html#fa-circle-question-troubleshooting-1",
+    "title": "Summary Statistics  in R",
+    "section": " Troubleshooting",
+    "text": "Troubleshooting\nNote that there are two different functions that look similar and do almost (but not quite!) exactly the same thing: if_else and ifelse.\n\nif_else is part of the dplyr package, and ifelse is part of base R. This is a common point of confusion. There are a few differences in how the two functions work, but one of the big ones is that ifelse does NOT preserve missingness. It’s a subtle difference, but watch out!"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#our-first-attempt-at-table-1",
+    "href": "summary_stats_in_r.html#our-first-attempt-at-table-1",
+    "title": "Summary Statistics  in R",
+    "section": "Our first attempt at Table 1",
+    "text": "Our first attempt at Table 1\nNow we can use the new aKIRs_groups and prior.chemo_groups variables in our Table 1.\n\ncytomegalovirus |&gt;  \n  select(aKIRs_groups, age, sex, race, \n         diagnosis.type, time.to.transplant, \n         prior.chemo, prior.transplant, \n         cmv, donor.cmv) |&gt; \n  tbl_summary(by = aKIRs_groups) \n\n\n\nLet’s break that down.\n[click] We’re starting with our cytomegalovirus dataframe, [click] and we pipe that to a select command to pick out just the variables we want to use in our table. [click] Then we pipe that selected dataframe to the tbl_summary command, and we put in the argument by = aKIRs_groups to tell it we want the table to present summary statistics for the two aKIRs groups (1-4 and 5-6) in separate columns."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#our-first-attempt-at-table-1-output",
+    "href": "summary_stats_in_r.html#our-first-attempt-at-table-1-output",
+    "title": "Summary Statistics  in R",
+    "section": "Our first attempt at Table 1",
+    "text": "Our first attempt at Table 1\n\n\n\n\n\n\n\n\nCharacteristic\n1 to 4 aKIRs, N = 481\n5 to 6 aKIRs, N = 161\n\n\n\n\nage\n56 (45, 61)\n54 (52, 60)\n\n\nsex\n\n\n\n\n    Female\n23 (48%)\n7 (44%)\n\n\n    Male\n25 (52%)\n9 (56%)\n\n\nrace\n\n\n\n\n    African-American\n5 (10%)\n1 (6.2%)\n\n\n    White\n43 (90%)\n15 (94%)\n\n\ndiagnosis.type\n\n\n\n\n    Lymphoid\n22 (51%)\n6 (40%)\n\n\n    Myeloid\n21 (49%)\n9 (60%)\n\n\n    Unknown\n5\n1\n\n\ntime.to.transplant\n16 (9, 35)\n11 (5, 16)\n\n\n    Unknown\n1\n0\n\n\nprior.chemo\n\n\n\n\n    0\n7 (15%)\n3 (19%)\n\n\n    1\n10 (21%)\n5 (31%)\n\n\n    2\n13 (27%)\n4 (25%)\n\n\n    3\n7 (15%)\n2 (12%)\n\n\n    4\n5 (10%)\n1 (6.2%)\n\n\n    5\n4 (8.3%)\n1 (6.2%)\n\n\n    7\n1 (2.1%)\n0 (0%)\n\n\n    8\n1 (2.1%)\n0 (0%)\n\n\nprior.transplant\n10 (21%)\n2 (12%)\n\n\ncmv\n23 (48%)\n3 (19%)\n\n\ndonor.cmv\n\n\n\n\n    Negative\n20 (42%)\n6 (38%)\n\n\n    Positive\n28 (58%)\n10 (62%)\n\n\n\n1 Median (IQR); n (%)"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#customizing-a-gtsummary-table",
+    "href": "summary_stats_in_r.html#customizing-a-gtsummary-table",
+    "title": "Summary Statistics  in R",
+    "section": "Customizing a gtsummary table",
+    "text": "Customizing a gtsummary table\nThis is a decent table! Notice there are a few things about this table that we might still want to change, for example:\n\nrow labels are taken from the variable names in the dataframe, so they’re lowercase and don’t use whitespace as we might like (e.g. “diagnosis.type” would be better as “Diagnosis Type”)\nThere’s no information about significance testing, like there is in the published table\n\n\nWe can add a lot of customization, though, to bring it closer to the publication version. We’ll look at a few options now."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#save-a-little-typing",
+    "href": "summary_stats_in_r.html#save-a-little-typing",
+    "title": "Summary Statistics  in R",
+    "section": "Save a little typing…",
+    "text": "Save a little typing…\n\ntable_data &lt;- cytomegalovirus |&gt;  \n  select(aKIRs_groups, age, sex, race, \n         diagnosis.type, time.to.transplant, \n         prior.radiation, prior.chemo_groups, \n         prior.transplant, recipient.cmv, donor.cmv)\n\n\nTo save re-typing code and highlight just what’s new, save the first part as table_data."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#add-p-values",
+    "href": "summary_stats_in_r.html#add-p-values",
+    "title": "Summary Statistics  in R",
+    "section": "Add p-values",
+    "text": "Add p-values\n\ntable_data |&gt; \n  tbl_summary(by = aKIRs_groups) |&gt; \n  add_p()\n\n\n\nThis is an improvement, but some of you may have noticed that the p values here don’t match the published table, and the footnote explains why — says it’s using Wilcoxon rank sum test, Pearson’s chi-squared, and Fisher’s exact test to get the p vlaues."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#add-p-values-output",
+    "href": "summary_stats_in_r.html#add-p-values-output",
+    "title": "Summary Statistics  in R",
+    "section": "Add p-values",
+    "text": "Add p-values\n\n\n\n\n\n\n\n\nCharacteristic\n1 to 4 aKIRs, N = 481\n5 to 6 aKIRs, N = 161\np-value2\n\n\n\n\nage\n56 (45, 61)\n54 (52, 60)\n0.7\n\n\nsex\n\n\n0.8\n\n\n    Female\n23 (48%)\n7 (44%)\n\n\n\n    Male\n25 (52%)\n9 (56%)\n\n\n\nrace\n\n\n&gt;0.9\n\n\n    African-American\n5 (10%)\n1 (6.2%)\n\n\n\n    White\n43 (90%)\n15 (94%)\n\n\n\ndiagnosis.type\n\n\n0.5\n\n\n    Lymphoid\n22 (51%)\n6 (40%)\n\n\n\n    Myeloid\n21 (49%)\n9 (60%)\n\n\n\n    Unknown\n5\n1\n\n\n\ntime.to.transplant\n16 (9, 35)\n11 (5, 16)\n0.2\n\n\n    Unknown\n1\n0\n\n\n\nprior.radiation\n9 (19%)\n2 (12%)\n0.7\n\n\nprior.chemo_groups\n\n\n0.9\n\n\n    0\n7 (15%)\n3 (19%)\n\n\n\n    1\n10 (21%)\n5 (31%)\n\n\n\n    2\n13 (27%)\n4 (25%)\n\n\n\n    3\n7 (15%)\n2 (12%)\n\n\n\n    ≥ 4\n11 (23%)\n2 (12%)\n\n\n\nprior.transplant\n10 (21%)\n2 (12%)\n0.7\n\n\nrecipient.cmv\n\n\n0.2\n\n\n    Negative\n16 (33%)\n8 (50%)\n\n\n\n    Positive\n32 (67%)\n8 (50%)\n\n\n\ndonor.cmv\n\n\n0.8\n\n\n    Negative\n20 (42%)\n6 (38%)\n\n\n\n    Positive\n28 (58%)\n10 (62%)\n\n\n\n\n1 Median (IQR); n (%)\n\n\n2 Wilcoxon rank sum test; Pearson's Chi-squared test; Fisher's exact test"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#customize-p-values",
+    "href": "summary_stats_in_r.html#customize-p-values",
+    "title": "Summary Statistics  in R",
+    "section": "Customize p-values",
+    "text": "Customize p-values\nThe help documentation (?add_p.tbl_summary) explains a little more thoroughly:\n\nTests default to “kruskal.test” for continuous variables (“wilcox.test” when “by” variable has two levels), “chisq.test.no.correct” for categorical variables with all expected cell counts &gt;=5, and “fisher.test” for categorical variables with any expected cell count &lt;5.\n\n\nIt would be nice if the published table included a footnote explaining which tests they used, but unfortunately it doesn’t. We can guess that it was a standard t-test rather than the Wilcoxon rank sum test, though. We can control which tests gtsummary uses by adding a test argument to the add_p() command. We’ll also have it round to two digits instead of one by modifying the pvalue_fun command."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#customize-p-values-1",
+    "href": "summary_stats_in_r.html#customize-p-values-1",
+    "title": "Summary Statistics  in R",
+    "section": "Customize p-values",
+    "text": "Customize p-values\nMake the p values round to 2 digits instead of 1, and use t.test instead of wilcoxon rank sum test:\n\ntable_data |&gt; \n  tbl_summary(by = aKIRs_groups) |&gt; \n  add_p(test = list(all_continuous() ~ \"t.test\",\n                    all_categorical() ~ \"chisq.test.no.correct\"),\n        test.args = all_continuous() ~ list(var.equal = TRUE),\n        pvalue_fun = function(x) style_pvalue(x, digits = 2))"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#customize-p-values-1-output",
+    "href": "summary_stats_in_r.html#customize-p-values-1-output",
+    "title": "Summary Statistics  in R",
+    "section": "Customize p-values",
+    "text": "Customize p-values\n\n\n\n\n\n\n\n\nCharacteristic\n1 to 4 aKIRs, N = 481\n5 to 6 aKIRs, N = 161\np-value2\n\n\n\n\nage\n56 (45, 61)\n54 (52, 60)\n0.43\n\n\nsex\n\n\n0.77\n\n\n    Female\n23 (48%)\n7 (44%)\n\n\n\n    Male\n25 (52%)\n9 (56%)\n\n\n\nrace\n\n\n0.62\n\n\n    African-American\n5 (10%)\n1 (6.2%)\n\n\n\n    White\n43 (90%)\n15 (94%)\n\n\n\ndiagnosis.type\n\n\n0.46\n\n\n    Lymphoid\n22 (51%)\n6 (40%)\n\n\n\n    Myeloid\n21 (49%)\n9 (60%)\n\n\n\n    Unknown\n5\n1\n\n\n\ntime.to.transplant\n16 (9, 35)\n11 (5, 16)\n0.86\n\n\n    Unknown\n1\n0\n\n\n\nprior.radiation\n9 (19%)\n2 (12%)\n0.57\n\n\nprior.chemo_groups\n\n\n0.85\n\n\n    0\n7 (15%)\n3 (19%)\n\n\n\n    1\n10 (21%)\n5 (31%)\n\n\n\n    2\n13 (27%)\n4 (25%)\n\n\n\n    3\n7 (15%)\n2 (12%)\n\n\n\n    ≥ 4\n11 (23%)\n2 (12%)\n\n\n\nprior.transplant\n10 (21%)\n2 (12%)\n0.46\n\n\nrecipient.cmv\n\n\n0.23\n\n\n    Negative\n16 (33%)\n8 (50%)\n\n\n\n    Positive\n32 (67%)\n8 (50%)\n\n\n\ndonor.cmv\n\n\n0.77\n\n\n    Negative\n20 (42%)\n6 (38%)\n\n\n\n    Positive\n28 (58%)\n10 (62%)\n\n\n\n\n1 Median (IQR); n (%)\n\n\n2 Two Sample t-test; Pearson's Chi-squared test"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-heart-a-little-encouragement",
+    "href": "summary_stats_in_r.html#fa-heart-a-little-encouragement",
+    "title": "Summary Statistics  in R",
+    "section": " A little encouragement…",
+    "text": "A little encouragement…\nIf you’re feeling like these arguments look confusing (why does it start with list()? What does the ~ mean??), you’re not alone!\nAs you get further away from the default settings in gtsummary (and other packages), your code is likely to become less intuitive and harder to read. That’s okay!\n\nPretty much no one, even an R expert, would be able to guess how to specify these arguments without looking it up first. The normal, expected process for something like this is to search for what you want to do online (e.g. “gtsummary round p value to 2 digits”), or look in the help documentation, until you find example code that does what you need and then copy it. Part of why we included these examples here is so you can come back and copy them later when you’re making your own tables!"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#what-was-that-error",
+    "href": "summary_stats_in_r.html#what-was-that-error",
+    "title": "Summary Statistics  in R",
+    "section": "What was that error?",
+    "text": "What was that error?\nWhen you ran the above code, you may have noticed that R printed out several warnings with text like Warning for variable 'race': simpleWarning in stats::chisq.test(x = structure(c(1L, 2L, 2L, 2L, 2L, 2L, 2L, : Chi-squared approximation may be incorrect.\n\nLike many warnings in R (and other programming languages), the text is unfortunately not super clear. But at least it does let you know what variable has a problem (race, in this case) and that it has something to do with the Chi-squared test we’re running on it to get those p-values.\nIt’s beyond the scope of this talk to get into the details, but the reason this warning comes up is because it’s actually a bad idea statistically to run an uncorrected Chi-squared test on variables where the expected counts are too low, as is the situation for several of the variables in this table (including race). We’re just trying to replicate the tests that were done to get the published version of the table, but R is right that we’re not using the best choice of tests here."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#clean-up-labels",
+    "href": "summary_stats_in_r.html#clean-up-labels",
+    "title": "Summary Statistics  in R",
+    "section": "Clean up labels",
+    "text": "Clean up labels\nOne glaring issue that remains is the row labels. We don’t want labels like “prior.chemo_groups” in our final table!\n. . . We can clean those up with the label argument in the tbl_summary command:\n\ntable_data |&gt; \n  tbl_summary(by = aKIRs_groups, \n              label = list(age ~ \"Age at transplant (yrs)\",\n                           sex ~ \"Sex\",\n                           race ~ \"Race\",\n                           diagnosis.type ~ \"Diagnostic category\",\n                           time.to.transplant ~ \"Months from diagnosis to transplant\",\n                           prior.radiation ~ \"Prior radiation therapy\",\n                           prior.chemo_groups ~ \"Number of prior chemotherapy regimens\",\n                           prior.transplant ~ \"Prior transplants\",\n                           recipient.cmv ~ \"Recipient CMV seropositive\",\n                           donor.cmv ~ \"Donor CMV seropositive\")) |&gt; \n  add_p(test = list(all_continuous() ~ \"t.test\",\n                    all_categorical() ~ \"chisq.test.no.correct\"),\n        test.args = all_continuous() ~ list(var.equal = TRUE),\n        pvalue_fun = function(x) style_pvalue(x, digits = 2))\n\n\n\nThis is starting to look a lot like the published paper!\nThere are still things to change (for example, our table prints the median with IQR for continuous variables, whereas the published paper prints the median with range), but this shows what the process is like for building a table with gtsummary."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#clean-up-labels-output",
+    "href": "summary_stats_in_r.html#clean-up-labels-output",
+    "title": "Summary Statistics  in R",
+    "section": "Clean up labels",
+    "text": "Clean up labels\n\n\n\n\n\n\n\n\nCharacteristic\n1 to 4 aKIRs, N = 481\n5 to 6 aKIRs, N = 161\np-value2\n\n\n\n\nAge at transplant (yrs)\n56 (45, 61)\n54 (52, 60)\n0.43\n\n\nSex\n\n\n0.77\n\n\n    Female\n23 (48%)\n7 (44%)\n\n\n\n    Male\n25 (52%)\n9 (56%)\n\n\n\nRace\n\n\n0.62\n\n\n    African-American\n5 (10%)\n1 (6.2%)\n\n\n\n    White\n43 (90%)\n15 (94%)\n\n\n\nDiagnostic category\n\n\n0.46\n\n\n    Lymphoid\n22 (51%)\n6 (40%)\n\n\n\n    Myeloid\n21 (49%)\n9 (60%)\n\n\n\n    Unknown\n5\n1\n\n\n\nMonths from diagnosis to transplant\n16 (9, 35)\n11 (5, 16)\n0.86\n\n\n    Unknown\n1\n0\n\n\n\nPrior radiation therapy\n9 (19%)\n2 (12%)\n0.57\n\n\nNumber of prior chemotherapy regimens\n\n\n0.85\n\n\n    0\n7 (15%)\n3 (19%)\n\n\n\n    1\n10 (21%)\n5 (31%)\n\n\n\n    2\n13 (27%)\n4 (25%)\n\n\n\n    3\n7 (15%)\n2 (12%)\n\n\n\n    ≥ 4\n11 (23%)\n2 (12%)\n\n\n\nPrior transplants\n10 (21%)\n2 (12%)\n0.46\n\n\nRecipient CMV seropositive\n\n\n0.23\n\n\n    Negative\n16 (33%)\n8 (50%)\n\n\n\n    Positive\n32 (67%)\n8 (50%)\n\n\n\nDonor CMV seropositive\n\n\n0.77\n\n\n    Negative\n20 (42%)\n6 (38%)\n\n\n\n    Positive\n28 (58%)\n10 (62%)\n\n\n\n\n1 Median (IQR); n (%)\n\n\n2 Two Sample t-test; Pearson's Chi-squared test"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#exporting-a-table",
+    "href": "summary_stats_in_r.html#exporting-a-table",
+    "title": "Summary Statistics  in R",
+    "section": "Exporting a table",
+    "text": "Exporting a table\nSo how do you get the table from R to Word? You can save the table as a Word doc, which you can then open and copy into your article.\n\nAnother option\nNot working in Word? No problem!\nYou can export your table in many different formats! For a list, see the gtsummary website.\n\nTo save a table as a Word file, add the following two lines to the end of your table commands (you can change “my_table.docx” to be whatever you want the filename to be):\n  as_flex_table() |&gt; \n  flextable::save_as_docx(path = \"my_table.docx\")\n\nTroubleshooting help\nNote that this requires a function from the flextable package. If you’ve never used flextable before, you may need to run install.packages(\"flextable\") before this code will work.\n\nFor example, to save the table above, you could do the following:\ntable_data |&gt; \n  tbl_summary(by = aKIRs_groups, \n              label = list(age ~ \"Age at transplant (yrs)\",\n                           sex ~ \"Sex\",\n                           race ~ \"Race\",\n                           diagnosis.type ~ \"Diagnostic category\",\n                           time.to.transplant ~ \"Months from diagnosis to transplant\",\n                           prior.radiation ~ \"Prior radiation therapy\",\n                           prior.chemo_groups ~ \"Number of prior chemotherapy regimens\",\n                           prior.transplant ~ \"Prior transplants\",\n                           recipient.cmv ~ \"Recipient CMV seropositive\",\n                           donor.cmv ~ \"Donor CMV seropositive\")) |&gt; \n  add_p(test = list(all_continuous() ~ \"t.test\",\n                    all_categorical() ~ \"chisq.test.no.correct\"),\n        test.args = all_continuous() ~ list(var.equal = TRUE),\n        pvalue_fun = function(x) style_pvalue(x, digits = 2)) |&gt; \n  as_flex_table() |&gt; \n  flextable::save_as_docx(path = \"my_table.docx\")\nBy default, flextable::save_as_docx will save the table in your current working directory. To save it somewhere else, use the path argument to specify which folder you want to save it in (for example, “reports/table1.docx”)."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-book-open-learn-more-6",
+    "href": "summary_stats_in_r.html#fa-book-open-learn-more-6",
+    "title": "Summary Statistics  in R",
+    "section": " Learn more",
+    "text": "Learn more\nFor a review of how to specify a path, see the explanation of absolute and relative paths in our Directories and File Paths module."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-rocket-coding-challenge-3-homework",
+    "href": "summary_stats_in_r.html#fa-rocket-coding-challenge-3-homework",
+    "title": "Summary Statistics  in R",
+    "section": " Coding Challenge 3: Homework!",
+    "text": "Coding Challenge 3: Homework!\nFor your final coding challenge, return to RStudio and follow the instructions there to create a Table 1 for a brand new data set, the laryngoscope data.\nHere’s the published table you’ll be trying to recreate:\n\nTable 1 from the published article on the laryngoscope data.\nFor inspiration (and lots of examples of things to try), check out the tbl_summary help documentation.\n\nHave fun, and don’t worry about getting everything perfect — if you get stuck on part of the table, just move on and try something else. The goal is to get practice using the gtsummary commands."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#fa-rocket-coding-challenge-3-homework-1",
+    "href": "summary_stats_in_r.html#fa-rocket-coding-challenge-3-homework-1",
+    "title": "Summary Statistics  in R",
+    "section": " Coding Challenge 3: Homework!",
+    "text": "Coding Challenge 3: Homework!\nDon’t struggle in silence!\n\n\nAsk questions and share tips on the CHOPR slack\nCome to R Office Hours to show off your progress and get help\nThere’s a solution available in summary_stats_solutions.Rmd, but you’ll learn a lot more if you try it yourself first"
+  },
+  {
+    "objectID": "summary_stats_in_r.html#about-these-data",
+    "href": "summary_stats_in_r.html#about-these-data",
+    "title": "Summary Statistics  in R",
+    "section": "About these data",
+    "text": "About these data\nTo learn more about this dataset:\n\n?cytomegalovirus\n\n\nFrom the help documentation:\n\nThis data set contains 64 consecutive patients who underwent T-cell replete, matched sibling donor reduced-intensity conditioning allogeneic hematopoietic stem cell transplant. The primary risk factor of interest was the number of activating killer immunoglobulin-like receptors (aKIRs: 1-4 vs. 5-6)."
+  },
+  {
+    "objectID": "summary_stats_in_r.html#working-around-missing-values",
+    "href": "summary_stats_in_r.html#working-around-missing-values",
+    "title": "Summary Statistics  in R",
+    "section": "Working around missing values",
+    "text": "Working around missing values\n\nmin(cytomegalovirus$time.to.transplant, na.rm = TRUE)\n\n\n\n[1] 1.84\n\n\n\nQuick aside here about a handy shortcut when you’re working in the console. If you want to tweak a line of code you just ran, you can use the up arrow on your keyboard to bring up the last command you ran. Then you can edit it, and hit enter to run the tweaked version.\nTo get the minimum for this column ignoring the missing value, use the up arrow to bring up your last command and add na.rm = TRUE."
+  }
+]
