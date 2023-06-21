@@ -420,9 +420,13 @@ You can see in the help documentation for the data (`?cytomegalovirus`) that `ti
 min(cytomegalovirus$time.to.transplant)
 ```
 
-. . .
+::: notes
+We can get the minimum of any numeric variable with the function `min`.
 
-<br>
+[click] Uh-oh! It returns `NA` for this because there is a missing observation somewhere in this column. 
+:::
+
+## Checking the help documentation
 
 ```{r eval=FALSE}
 ?min
@@ -437,10 +441,7 @@ From the help documentation for `min`:
 > `min(..., na.rm = FALSE)`
 
 ::: notes
-We can get the minimum of any numeric variable with the function `min`.
-
-[click] Uh-oh! It returns `NA` for this because there is a missing observation somewhere in this column. 
-[click] If you look at `?min`, you’ll see the default for this function (and most statistics functions in R) is `na.rm = FALSE`, which basically means “only compute a value if there are no missing observations”.
+If you look at `?min`, you’ll see the default for this function (and most statistics functions in R) is `na.rm = FALSE`, which basically means “only compute a value if there are no missing observations”.
 ::: 
 
 ## Working around missing values
