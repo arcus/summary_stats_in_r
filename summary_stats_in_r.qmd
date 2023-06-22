@@ -631,7 +631,7 @@ countdown(minutes = 2, seconds = 00)
 
 ## Presenting Summary Statistics<br>in R
 
-![Table 1 summary statistics on the cytomegalovirus data](media/cytomegalovirus_table1.png){fig-alt="" width="100%"}
+![Table 1 summary statistics on the cytomegalovirus data](media/cytomegalovirus_table1_cropped.png){fig-alt="" width="100%"}
 
 ::: notes
 Many research articles begin with a table summarizing the patients or research subjects analyzed, usually broken down by condition or exposure to allow the reader to see any baseline differences between groups. For example, here is Table 1 from the paper this dataset is from.
@@ -649,7 +649,7 @@ The `gtsummary` package is a great way to do that.
 
 We’ll recreate an approximation of the cytomegalovirus Table 1 using `gtsummary`:
 
-![](media/cytomegalovirus_table1.png){fig-alt='Table 1 from the published paper on the cytomegalovirus data. Columns are "1 to 4 aKIRs", "5 to 6 aKIRs" and "P value". There are rows for each of the following variables: age, sex, race, diagnosis category, months from diagnosis to treatment, prior radiation therapy, number of prior chemo regimens, prior transplants, recipient CMV seropositive, donor CMV seropositive, and recipient or donor CMV seropositive.' width="100%"}
+![](media/cytomegalovirus_table1.png){fig-alt='Table 1 from the published paper on the cytomegalovirus data. Columns are "1 to 4 aKIRs", "5 to 6 aKIRs" and "P value". There are rows for each of the following variables: age, sex, race, diagnosis category, months from diagnosis to treatment, prior radiation therapy, number of prior chemo regimens, prior transplants, recipient CMV seropositive, donor CMV seropositive, and recipient or donor CMV seropositive.' width="900"}
 
 ::: notes
 Often, a lot of the work you need to do to get a table to look how you want is actually data cleaning work rather than anything about the function that will actually create your table. This case is no exception.
