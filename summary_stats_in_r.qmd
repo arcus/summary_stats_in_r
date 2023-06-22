@@ -78,10 +78,10 @@ We're increasing the registration cap to allow for more people this time around,
 Note that if you've attended R 101 in the past, this will be the same content again; it's not a new workshop. [click] If you have attended the R 101 workshop before, we'd love to have you join as a TA! You'll see an email about this in the coming weeks, but I wanted to mention it now to put it on your radar.
 ::: 
 
-# R 102: <br> Summary Statistics
+# R 201: <br> Summary Statistics
 
 ::: notes
-Okay! So this talk is a quick dip into some 102-level R. In other words, if you've had a little exposure to R before, such as through an Intro to R workshop, this is hopefully the right level for you now. 
+Okay! So this talk is a quick dip into some 201-level R. In other words, if you've had a little exposure to R before, such as through an Intro to R for Clinical Data workshop, this is hopefully the right level for you now. 
 If you're completely brand new to R, first of all: Welcome! You may find it tricky to actively follow along with the code today since I'm going to skim over some of the initial steps, but go ahead and give it a try, or just listen and watch if that feels more like the right speed. 
 
 Our topic is getting summary statistics in R, the first step to pretty much any analysis. We'll also look at how to present those summary stats in a lovely, publication-ready Table 1. Please feel very free to stop me with questions, either by unmuting or in the chat – I've left plenty of extra time in the talk, so there's space for us to stop and talk about things. 
