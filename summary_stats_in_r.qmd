@@ -724,7 +724,7 @@ Now we can use the new `aKIRs_groups` and `prior.chemo_groups` variables in our 
 cytomegalovirus |>  
   select(aKIRs_groups, age, sex, race, 
          diagnosis.type, time.to.transplant, 
-         prior.chemo, prior.transplant, 
+         prior.chemo_groups, prior.transplant, 
          cmv, donor.cmv) |> 
   tbl_summary(by = aKIRs_groups) 
 ```
