@@ -550,12 +550,11 @@ Look in the `summary_stats_exercises.rmd` file to find your first coding challen
 :::
 
 ```{r echo=FALSE}
-countdown(minutes = 5, seconds = 00)
+countdown(minutes = 2, seconds = 00)
 ```
 
 ::: notes
-Don't work through the whole exercise file now. 
-When you reach the lines that say `STOP HERE!  Go back to the module to continue.`, pause your work and come back here.
+We'll just work on this for a couple minutes and if you don't finish during that time, no sweat, just pause wherever you are and we'll take a look at the solutions together. 
 :::
 
 ## Counts
@@ -649,7 +648,7 @@ Look in the `summary_stats_exercises.rmd` file to find your next coding challeng
 :::
 
 ```{r echo=FALSE}
-countdown(minutes = 5, seconds = 00)
+countdown(minutes = 2, seconds = 00)
 ```
 
 ## Presenting Summary Statistics<br>in R
