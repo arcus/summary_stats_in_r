@@ -186,15 +186,15 @@ I've got a few of these "learn more" slides thrown in throughout the presentatio
 
 Two options:
 
-1. Work in the cloud: [https://bit.ly/chopr_rstudio](https://bit.ly/chopr_rstudio)
+1. Work in the cloud: [https://posit.cloud/content/6126628](https://posit.cloud/content/6126628)
 2. Work on your computer: [https://github.com/arcus/education_r_environment](https://github.com/arcus/education_r_environment)
 
 ::: notes
 Time to start coding! By far the best way to learn R is to practice, so work through this code yourself as you follow along.
 
-This link will open an instance of mybinder, which gives you an anonymous way to work with the code right in your browser without having to install anything or make an account. 
+This link will take you to Posit Cloud, which gives you a way to work with the code right in your browser without having to install anything on your machine. You will need to create a free account if you don't already have one. I'll click that link now, and log in with a different account than the one I used to create it so you can see what it looks like. It will take a few minutes to load.
 
-You can also get all of the code for this talk directly from our GitHub and download it to work on your own machine. 
+You can also get all of the code for this talk directly from our GitHub and download it to work on your own machine. If you want to go this route, go to our GitHub repo and then find this green "Code" button. If click it you'll see you have several options, one of which is downloading a zip file -- click that and it will download all the files you need for this talk. Once it's done downloading, double click it to unzip the file. If you're comfortable using git, you can also clone the repo, or fork it if you'd like a personal copy. And if you don't know what cloning and forking are, no worries! Just use the zip file. 
 :::
 
 ## The packages we'll be using today
@@ -217,6 +217,12 @@ There's a lot of helpful information (including examples and tutorials) on the p
 - [medicaldata](https://higgi13425.github.io/medicaldata/)
 - [gtsummary](https://www.danieldsjoberg.com/gtsummary)
 
+::: notes
+These packages all have excellent websites available with lots of great tutorials and such, so definitely go back and look at those websites if you want to learn more. 
+
+I'll also pause here for a moment to invite anyone that is having trouble getting access to the code, either with that Posit Cloud link or by downloading the files, to let us know in the chat. If you have the code pulled up and ready to go, please click the thumbs up reaction in Teams to let me know you're ready. 
+:::
+
 ## Load packages
 
 Only if needed:
@@ -236,6 +242,8 @@ library(gtsummary)
 
 ::: notes
 If you're running this on your own computer rather than in the cloud instance we set up, you may need to run `install.packages` first if you haven't ever used these packages before. If you're working in the cloud, then all three packages have already been installed for you.
+
+Either way, the library commands here are written out for you in the first chunk of the file `summary_stats_exercises.rmd`. Go ahead and open that file now, and click the green arrow to run those three lines.
 :::
 
 ## The data
@@ -248,6 +256,8 @@ head(cytomegalovirus)
 ```
 
 ::: notes
+This command is also written out for you in the `summary_stats_exercises.rmd` file, in the next code chunk.
+
 Let's take a look at the data. [click]
 
 You should see the first six rows of the cytomegalovirus data frame, which look like this.
