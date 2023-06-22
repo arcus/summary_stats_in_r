@@ -519,28 +519,6 @@ sd(cytomegalovirus$time.to.transplant, na.rm = TRUE) # standard deviation
 Since we're running these all on the same column, you can use the up arrow to tweak the command each time.
 :::
 
-## Quantiles
-
-The median is the 50th percentile, but you may want other values, like
-the 25th and 75th percentile. You can get any you want with the
-`quantile` function:
-
-```{r}
-#| output-location: fragment
-# the default quantiles
-quantile(cytomegalovirus$time.to.transplant, 
-         na.rm = TRUE) 
-```
-
-. . .
-
-```{r}
-# custom quantiles
-quantile(cytomegalovirus$time.to.transplant, 
-         probs = c(.1, .2, .3, .4), 
-         na.rm = TRUE)
-```
-
 ## {{< fa rocket >}} Coding Challenge 1
 
 ::: {.r-fit-text}
@@ -653,7 +631,7 @@ countdown(minutes = 2, seconds = 00)
 
 ## Presenting Summary Statistics<br>in R
 
-![Table 1 summary statistics on the cytomegalovirus data](media/cytomegalovirus_table1.png){fig-alt=""}
+![Table 1 summary statistics on the cytomegalovirus data](media/cytomegalovirus_table1.png){fig-alt="" width="100%"}
 
 ::: notes
 Many research articles begin with a table summarizing the patients or research subjects analyzed, usually broken down by condition or exposure to allow the reader to see any baseline differences between groups. For example, here is Table 1 from the paper this dataset is from.
