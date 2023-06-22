@@ -766,7 +766,7 @@ To save re-typing code and highlight just what's new, save the first part as `ta
 ## Add p-values
 
 ```{r}
-#| output-location: slide
+#| output-location: fragment
 table_data |> 
   tbl_summary(by = aKIRs_groups) |> 
   add_p()
@@ -831,10 +831,11 @@ It's beyond the scope of this talk to get into the details, but the reason this 
 One glaring issue that remains is the row labels. We don't want labels like "prior.chemo_groups" in our final table! 
 
 . . .
+
 We can clean those up with the `label` argument in the `tbl_summary` command:
 
 ```{r}
-#| output-location: slide
+#| output-location: fragment
 table_data |> 
   tbl_summary(by = aKIRs_groups, 
               label = list(age ~ "Age at transplant (yrs)",
@@ -863,32 +864,28 @@ There are still things to change (for example, our table prints the median with 
 
 So how do you get the table from R to Word? You can save the table as a Word doc, which you can then open and copy into your article. 
 
-<div class = "options">
-<b style="color: rgb(var(--color-highlight));">Another option</b><br>
-
+::: aside
 Not working in Word? No problem!
 
 You can export your table in many different formats! For a list, see [the `gtsummary` website](https://www.danieldsjoberg.com/gtsummary/articles/rmarkdown.html).
+:::
 
-</div>
+To save a table as a Word file, add the following two lines to the end of your table commands (you can change "my_table.docx" to be whatever you want the file name to be):
 
-To save a table as a Word file, add the following two lines to the end of your table commands (you can change "my_table.docx" to be whatever you want the filename to be):
-
-```r
+```{r eval=FALSE}
   as_flex_table() |> 
   flextable::save_as_docx(path = "my_table.docx")
 ```
 
-<div class = "help">
-<b style="color: rgb(var(--color-highlight));">Troubleshooting help</b><br>
+## {{< fa circle-question >}} Troubleshooting
 
-Note that this requires a function from the flextable package. If you've never used flextable before, you may need to run `install.packages("flextable")` before this code will work.
+Note that this requires a function from the `flextable` package. If you've never used `flextable` before, you may need to run `install.packages("flextable")` before this code will work.
 
-</div>
+## Exporting a table
 
 For example, to save the table above, you could do the following:
 
-```r
+```{r eval=FALSE}
 table_data |> 
   tbl_summary(by = aKIRs_groups, 
               label = list(age ~ "Age at transplant (yrs)",
@@ -909,7 +906,9 @@ table_data |>
   flextable::save_as_docx(path = "my_table.docx")
 ```
 
+::: notes
 By default, `flextable::save_as_docx` will save the table in your current working directory. To save it somewhere else, use the `path` argument to specify which folder you want to save it in (for example, "reports/table1.docx").
+:::
 
 ## {{< fa book-open >}} Learn more
 
